@@ -1,0 +1,15 @@
+node_modules
+*.log
+*.txt
+*.out
+.DS_Store
+.idea
+.idea/
+logs/
+cache/
+config.ts
+
+tls/cert.pem
+tls/chain.pem
+tls/fullchain.pem
+tls/privkey.pem
