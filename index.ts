@@ -11,19 +11,17 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(fileUpload());
+app.use(fileUpload({ debug: true }));
 
 app.get('/', (req, res) => {
-    res.send('Status 🟢')
+    res.send('Status 🟢');
 })
 
 app.post('/upload', (req, res) => {
     delete (req.files.file as any).data;
     delete (req.files.file as any).mv;
     console.log(req.files.file);
-    setTimeout(() => {
-        res.json({ success: true });
-    }, 5000)
+    res.json({ success: true });
 });
 
 app.listen(port, () => {
